@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('voters', function (Blueprint $table) {
+        Schema::create('votes', function (Blueprint $table) {
             $table->id();
-            $table->integer('fingerprint_id')->default(0);
-            $table->string('name');
-            $table->string('region');
-            $table->string('district');
-            $table->string('ward');
-            $table->string('birth_date');
+            $table->unsignedBigInteger('voter_id');
+            $table->string('president');
+            $table->string('MP');
+            $table->string('councilor');
             $table->timestamps();
+
+            $table->foreign('voter_id')->references('fingerprint_id')->on('voters')->onDelete('cascade')->name('voter_voter_id');
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('voters');
+        Schema::dropIfExists('votes');
     }
 };

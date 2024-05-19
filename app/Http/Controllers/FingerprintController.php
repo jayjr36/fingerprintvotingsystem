@@ -19,20 +19,23 @@ class FingerprintController extends Controller
             'region' => 'required',
             'district' => 'required',
             'ward' => 'required',
-            'dob' => 'required'
+            'dob' => 'required|date'
         ]);
 
-        $voter = new Voter();
-        $voter->name = $request->name;
-        $voter->region = $request->region;
-        $voter->district = $request->district;
-        $voter->ward = $request->ward;
-        $voter->birth_date = $request->dob;
-        $voter->save();
+        try {
+            $voter = new Voter();
+            $voter->name = $request->name;
+            $voter->region = $request->region;
+            $voter->district = $request->district;
+            $voter->ward = $request->ward;
+            $voter->birth_date = $request->dob;
+            $voter->save();
 
-        return redirect()->route('register')->with('success', 'User registered successfully');
+            return redirect()->route('register')->with('success', 'Details saved awaiting fingerprint');
+        } catch (\Exception $e) {
+            return redirect()->route('register')->with('error', 'Registration failed, please try again.');
+        }
     }
-
     public function updateFingerprint(Request $request)
     {
         $request->validate([
@@ -43,9 +46,9 @@ class FingerprintController extends Controller
 
         if ($lastUser) {
             $lastUser->update(['fingerprint_id' => $request->fingerprint_id]);
-            return response()->json(['message' => 'Fingerprint ID added to the last user successfully']);
+            return response()->json(['message' => 'Fingerprint ID added to the last user successfully', 'success' => true]);
         } else {
-            return response()->json(['error' => 'No user found']);
+            return response()->json(['error' => 'No user found', 'success' => false]);
         }
     }
 }

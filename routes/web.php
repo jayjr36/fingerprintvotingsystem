@@ -22,3 +22,8 @@ Route::get('/', function () {
 Route::get('/register', [FingerprintController::class, 'showRegistrationForm'])->name('register');
 
 Route::post('/register', [FingerprintController::class, 'register'])->name('register.submit');
+
+Route::get('/votes', function () {
+    return view('votes');
+})->name('votes-display');
+

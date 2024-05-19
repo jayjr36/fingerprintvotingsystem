@@ -3,6 +3,7 @@
 use App\Http\Controllers\FingerprintController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //Route::post('/fingerprint', [FingerprintController::class, 'handleFingerprint']);
 
 Route::post('/fingerprint/update', [FingerprintController::class, 'updateFingerprint']);
+Route::post('/votes/store', [VoteController::class, 'store']);
+Route::get('/votes', [VoteController::class, 'index']);
 
 
