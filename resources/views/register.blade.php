@@ -6,7 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container mt-5 col-md-5">
         <center>
             <h2>Voter Registration</h2>
 

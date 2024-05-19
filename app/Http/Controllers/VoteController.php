@@ -17,13 +17,19 @@ class VoteController extends Controller
             'councillor' => 'required|string',
         ]);
 
-        // Check if the voter_id exists in the voters table where fingerprint_id is not null
         $voter = Voter::where('fingerprint_id',$validatedData['voter_id'])
                       ->whereNotNull('fingerprint_id')
                       ->first();
 
         if (!$voter) {
             return response()->json(['error' => 'Voter ID not found or fingerprint not registered'], 400);
+        }
+
+        // Check if the voter has already voted
+        $existingVote = Vote::where('voter_id', $validatedData['voter_id'])->first();
+
+        if ($existingVote) {
+            return response()->json(['error' => 'This voter has already voted'], 400);
         }
 
         $vote = Vote::create([

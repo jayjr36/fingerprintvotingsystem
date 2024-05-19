@@ -4,11 +4,65 @@
     <title>Real-Time Votes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
+  
     <div class="container">
-        <h1>Real-Time Votes</h1>
-        <table class="table">
+       
+        <h2 >Vote Counts</h2>
+    <div id="vote-counts">
+        <table class="col-md-6">
+            <thead>
+                <tr>
+                    <th>Candidate</th>
+                    <th>Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>President Candidate1</td>
+                    <td id="president-candidate1">0</td>
+                </tr>
+                <tr>
+                    <td>President Candidate2</td>
+                    <td id="president-candidate2">0</td>
+                </tr>
+                <tr>
+                    <td>MP Candidate1</td>
+                    <td id="mp-candidate1">0</td>
+                </tr>
+                <tr>
+                    <td>MP Candidate2</td>
+                    <td id="mp-candidate2">0</td>
+                </tr>
+                <tr>
+                    <td>Councilor Candidate1</td>
+                    <td id="councilor-candidate1">0</td>
+                </tr>
+                <tr>
+                    <td>Councilor Candidate2</td>
+                    <td id="councilor-candidate2">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+     <h1>Voters</h1>
+        <table class="table col-md-6">
             <thead>
                 <tr>
                     <th>Voter ID</th>
@@ -21,15 +75,6 @@
                 <!-- Votes will be appended here -->
             </tbody>
         </table>
-        <h2>Vote Counts</h2>
-        <div id="vote-counts">
-            <p>President Candidate1: <span id="president-candidate1">0</span></p>
-            <p>President Candidate2: <span id="president-candidate2">0</span></p>
-            <p>MP Candidate1: <span id="mp-candidate1">0</span></p>
-            <p>MP Candidate2: <span id="mp-candidate2">0</span></p>
-            <p>Councilor Candidate1: <span id="councilor-candidate1">0</span></p>
-            <p>Councilor Candidate2: <span id="councilor-candidate2">0</span></p>
-        </div>
     </div>
     <script>
         function fetchVotes() {

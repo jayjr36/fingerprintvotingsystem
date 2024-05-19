@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FingerprintController;
+use App\Http\Controllers\ContestantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Http\Controllers\FingerprintController;
 */
 
 Route::get('/', function () {
-    return view('register');
+    return view('home');
 });
 
 
@@ -27,3 +28,5 @@ Route::get('/votes', function () {
     return view('votes');
 })->name('votes-display');
 
+
+Route::get('/contestants', [ContestantController::class, 'index'])->name('contestants.index');
