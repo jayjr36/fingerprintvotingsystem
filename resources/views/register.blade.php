@@ -40,6 +40,12 @@
                     <input type="text" id="name" name="name" class="form-control" required>
                 </div>
                 <br>
+                 
+                <div class="form-group">
+                    <label for="card_no">Voter's ID:</label><br>
+                    <input type="text" id="card_no" name="card_no" class="form-control" required>
+                </div>
+                <br>
 
                 <div class="form-group">
                     <label for="region">Region:</label><br>
@@ -64,10 +70,12 @@
                     <input type="date" id="dob" name="dob" class="form-control" required>
                 </div>
                 <br>
-
-                <button type="submit" class="btn btn-primary">Register</button>
+                <div class="row px-2">
+                    <button type="submit" class="btn btn-success">Register</button>
+                </div>
+                
             </form>
-        <a href="{{route('votes-display')}}" class="btn btn-secodary">VOTES</a>
+       
             <div id="fingerprint-response" class="mt-4"></div>
         </center>
     </div>
@@ -94,12 +102,6 @@
             });
         }
 
-        // Simulate fingerprint update for demonstration purposes
-        // $(document).ready(function() {
-        //     setTimeout(function() {
-        //         updateFingerprint('sample-fingerprint-id'); // Replace with actual fingerprint ID
-        //     }, 5000); 
-        // });
     </script>
 </body>
 </html>

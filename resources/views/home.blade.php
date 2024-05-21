@@ -30,10 +30,16 @@
                     <a class="nav-link text-white" href="{{route('register')}}" target="iframe">Registration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{route('contestants.index')}}" target="iframe">Contestants</a>
+                    <a class="nav-link text-white" href="{{route('all-contestants')}}" target="iframe">Contestants</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{{route('votes-display')}}" target="iframe">Results</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{route('voters-registered')}}" target="iframe">Registered Voters</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{route('create-contestants')}}" target="iframe">Settings</a>
                 </li>
                 {{-- <li class="nav-item">
                     <a class="nav-link" href="{{route('')}}" target="iframe">Voters</a>

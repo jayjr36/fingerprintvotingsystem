@@ -4,9 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Voter;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+
 
 class FingerprintController extends Controller
 {
+    public function index()
+    {
+        $voters = Voter::all();
+        return view('allvoters', compact('voters'));
+    }
+
+    public function create()
+    {
+        return view('voters.create');
+    }
+
+
+
+
     public function showRegistrationForm()
     {
         return view('register');
@@ -16,15 +32,33 @@ class FingerprintController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'card_no'=> 'required',
             'region' => 'required',
             'district' => 'required',
             'ward' => 'required',
-            'dob' => 'required|date'
+            'dob' => [
+                'required',
+                'date',
+                function ($attribute, $value, $fail) {
+                    $dob = Carbon::parse($value);
+                    $now = Carbon::now();
+                    $age = $now->diffInYears($dob);
+                    
+                    if ($age < 1) {
+                        $fail('The date of birth must be at least one year old.');
+                    }
+                    
+                    if ($age < 18) {
+                        $fail('The contestant must be at least 18 years old.');
+                    }
+                },
+            ],
         ]);
 
         try {
             $voter = new Voter();
             $voter->name = $request->name;
+            $voter->card_no = $request->card_no;
             $voter->region = $request->region;
             $voter->district = $request->district;
             $voter->ward = $request->ward;

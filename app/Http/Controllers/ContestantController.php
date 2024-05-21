@@ -3,9 +3,43 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contestant;
 
 class ContestantController extends Controller
 {
+    public function indexContestants()
+    {
+        $presidentContestants = Contestant::where('category', 'president')->get();
+        $mpContestants = Contestant::where('category', 'mp')->get();
+        $councilorContestants = Contestant::where('category', 'councilor')->get();
+
+        return view('contestants.index', compact('presidentContestants', 'mpContestants', 'councilorContestants'));
+    }
+
+    public function create()
+    {
+        return view('contestants.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'category' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('images'), $imageName);
+
+        Contestant::create([
+            'name' => $request->name,
+            'category' => $request->category,
+            'image' => $imageName,
+        ]);
+
+        return redirect('/')->with('success', 'Contestant uploaded successfully.');
+    }
     public function index()
     {
     // $votes = Vote::all(); 

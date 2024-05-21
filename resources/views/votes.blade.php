@@ -22,46 +22,68 @@
 </head>
 <body>
   
-    <div class="container">
+    <div class="container-fluid pt-4 text-center">
        
         <h2 >Vote Counts</h2>
     <div id="vote-counts">
         <table class="col-md-6">
             <thead>
                 <tr>
-                    <th>Candidate</th>
+                    <th>Candidate Name</th>
                     <th>Votes</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>President Candidate1</td>
+                    <td class="text-center fw-bold fs-4">President</td>
+                </tr>
+                <tr>
+                    <td>Candidate1</td>
                     <td id="president-candidate1">0</td>
                 </tr>
                 <tr>
-                    <td>President Candidate2</td>
+                    <td>Candidate2</td>
                     <td id="president-candidate2">0</td>
                 </tr>
                 <tr>
-                    <td>MP Candidate1</td>
+                    <td>Candidate3</td>
+                    <td id="president-candidate3">0</td>
+                </tr>
+                <tr>
+                    <td class="text-center fw-bold fs-4">Members of parliament</td>
+                </tr>
+                <tr>
+                    <td>Candidate1</td>
                     <td id="mp-candidate1">0</td>
                 </tr>
                 <tr>
-                    <td>MP Candidate2</td>
+                    <td>Candidate2</td>
                     <td id="mp-candidate2">0</td>
                 </tr>
                 <tr>
-                    <td>Councilor Candidate1</td>
+                    <td>Candidate3</td>
+                    <td id="mp-candidate3">0</td>
+                </tr>
+                <tr>
+                    <td class="text-center fw-bold fs-4">Councilors</td>
+                </tr>
+                <tr>
+                    <td>Candidate1</td>
                     <td id="councilor-candidate1">0</td>
                 </tr>
                 <tr>
-                    <td>Councilor Candidate2</td>
+                    <td>Candidate2</td>
                     <td id="councilor-candidate2">0</td>
+                </tr>
+                <tr>
+                    <td>Candidate3</td>
+                    <td id="councilor-candidate3">0</td>
                 </tr>
             </tbody>
         </table>
     </div>
-     <h1>Voters</h1>
+    <div class="col-md-7 py-3">
+        <h1>Valid Votes</h1>
         <table class="table col-md-6">
             <thead>
                 <tr>
@@ -75,6 +97,8 @@
                 <!-- Votes will be appended here -->
             </tbody>
         </table>
+    </div>
+     
     </div>
     <script>
         function fetchVotes() {

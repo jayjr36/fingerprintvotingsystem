@@ -19,14 +19,18 @@ Route::get('/', function () {
     return view('home');
 });
 
-
 Route::get('/register', [FingerprintController::class, 'showRegistrationForm'])->name('register');
 
 Route::post('/register', [FingerprintController::class, 'register'])->name('register.submit');
+
+Route::get('/all-voters', [FingerprintController::class, 'index'])->name('voters-registered');
 
 Route::get('/votes', function () {
     return view('votes');
 })->name('votes-display');
 
-
 Route::get('/contestants', [ContestantController::class, 'index'])->name('contestants.index');
+
+Route::get('/contestants-uploaded', [ContestantController::class, 'indexContestants'])->name('all-contestants');
+Route::get('/create/upload', [ContestantController::class, 'create'])->name('create-contestants');
+Route::post('/save-upload/contestants', [ContestantController::class, 'store'])->name('store-contestants');

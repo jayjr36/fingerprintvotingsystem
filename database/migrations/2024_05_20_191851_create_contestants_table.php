@@ -11,15 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('voters', function (Blueprint $table) {
+        Schema::create('contestants', function (Blueprint $table) {
             $table->id();
-            $table->integer('fingerprint_id')->default(0);
             $table->string('name');
-            $table->string('card_no')->unique();
-            $table->string('region');
-            $table->string('district');
-            $table->string('ward');
-            $table->string('birth_date');
+            $table->string('image');
+            $table->string('category');
             $table->timestamps();
         });
     }
@@ -29,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('voters');
+        Schema::dropIfExists('contestants');
     }
 };
