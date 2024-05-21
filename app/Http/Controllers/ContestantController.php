@@ -38,7 +38,7 @@ class ContestantController extends Controller
             'image' => $imageName,
         ]);
 
-        return redirect('/')->with('success', 'Contestant uploaded successfully.');
+        return redirect('/contestants-uploaded')->with('success', 'Contestant uploaded successfully.');
     }
     public function index()
     {
