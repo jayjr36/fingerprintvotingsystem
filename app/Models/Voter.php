@@ -9,5 +9,13 @@ class Voter extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = [
+        "fingerprint_id",
+        "name",
+        "card_no",
+        "region",
+        "district",
+        "ward",
+        "birth_date",
+    ];
 }

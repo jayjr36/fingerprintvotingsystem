@@ -85,4 +85,36 @@ class FingerprintController extends Controller
             return response()->json(['error' => 'No user found', 'success' => false]);
         }
     }
+
+    public function edit($id)
+    {
+        $voter = Voter::findOrFail($id);
+        return view('edit', compact('voter'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'card_no' => 'required|string|max:255',
+            'region' => 'required|string|max:255',
+            'district' => 'required|string|max:255',
+            'ward' => 'required|string|max:255',
+            'fingerprint_id' => 'required|string|max:255',
+            'birth_date' => 'required|date',
+        ]);
+
+        $voter = Voter::findOrFail($id);
+        $voter->update($request->all());
+
+        return redirect()->route('voters-registered')->with('success', 'Voter updated successfully');
+    }
+
+    public function destroy($id)
+    {
+        $voter = Voter::findOrFail($id);
+        $voter->delete();
+
+        return redirect()->route('voters-registered')->with('success', 'Voter deleted successfully');
+    }
 }

@@ -13,6 +13,7 @@
                     <th>Ward</th>
                     <th>Fingerprint ID</th>
                     <th>Date of Birth</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,9 +26,18 @@
                         <td>{{ $voter->ward }}</td>
                         <td>{{ $voter->fingerprint_id }}</td>
                         <td>{{ $voter->birth_date }}</td>
+                        <td>
+                            <a href="{{ route('voters.edit', $voter->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <form action="{{ route('voters.destroy', $voter->id) }}" method="POST" style="display: inline-block;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
 @endsection
+

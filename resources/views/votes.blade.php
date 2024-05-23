@@ -38,45 +38,45 @@
                     <td class="text-center fw-bold fs-4">President</td>
                 </tr>
                 <tr>
-                    <td>Candidate1</td>
+                    <td>PAUL MAKONDA</td>
                     <td id="president-candidate1">0</td>
                 </tr>
                 <tr>
-                    <td>Candidate2</td>
+                    <td>TUNDU LISU</td>
                     <td id="president-candidate2">0</td>
                 </tr>
                 <tr>
-                    <td>Candidate3</td>
+                    <td>SAMIA HASSAN</td>
                     <td id="president-candidate3">0</td>
                 </tr>
                 <tr>
                     <td class="text-center fw-bold fs-4">Members of parliament</td>
                 </tr>
                 <tr>
-                    <td>Candidate1</td>
+                    <td>JANETH MAGUFULI</td>
                     <td id="mp-candidate1">0</td>
                 </tr>
                 <tr>
-                    <td>Candidate2</td>
+                    <td>JOSEPH H. SHINDIKA</td>
                     <td id="mp-candidate2">0</td>
                 </tr>
                 <tr>
-                    <td>Candidate3</td>
+                    <td>MWANA FALSAFA</td>
                     <td id="mp-candidate3">0</td>
                 </tr>
                 <tr>
                     <td class="text-center fw-bold fs-4">Councilors</td>
                 </tr>
                 <tr>
-                    <td>Candidate1</td>
+                    <td>JACK HAMISI</td>
                     <td id="councilor-candidate1">0</td>
                 </tr>
                 <tr>
-                    <td>Candidate2</td>
+                    <td>HAJI S. LIBULULU</td>
                     <td id="councilor-candidate2">0</td>
                 </tr>
                 <tr>
-                    <td>Candidate3</td>
+                    <td>HALIMA MDEE</td>
                     <td id="councilor-candidate3">0</td>
                 </tr>
             </tbody>
@@ -109,9 +109,9 @@
                     let tableBody = $('#votes-table-body');
                     tableBody.empty();
 
-                    let presidentCounts = {'candidate1': 0, 'candidate2': 0};
-                    let mpCounts = {'candidate1': 0, 'candidate2': 0};
-                    let councilorCounts = {'candidate1': 0, 'candidate2': 0};
+                    let presidentCounts = {'candidate1': 0, 'candidate2': 0, 'candidate3': 0};
+                    let mpCounts = {'candidate1': 0, 'candidate2': 0, 'candidate3': 0};
+                    let councilorCounts = {'candidate1': 0, 'candidate2': 0, 'candidate3': 0};
 
                     data.forEach(vote => {
                         tableBody.append(`<tr>
@@ -136,17 +136,20 @@
 
                     $('#president-candidate1').text(presidentCounts['candidate1']);
                     $('#president-candidate2').text(presidentCounts['candidate2']);
+                    $('#president-candidate3').text(presidentCounts['candidate3']);
                     $('#mp-candidate1').text(mpCounts['candidate1']);
                     $('#mp-candidate2').text(mpCounts['candidate2']);
+                    $('#mp-candidate3').text(mpCounts['candidate3']);
                     $('#councilor-candidate1').text(councilorCounts['candidate1']);
                     $('#councilor-candidate2').text(councilorCounts['candidate2']);
+                    $('#councilor-candidate3').text(councilorCounts['candidate3']);
                 }
             });
         }
 
         $(document).ready(function() {
             fetchVotes();
-            setInterval(fetchVotes, 5000); // Fetch votes every 5 seconds
+            setInterval(fetchVotes, 2000);
         });
     </script>
 </body>

@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <div class="container-fluid bg-dark text-white align-items-center justify-contents-center" >
+    <div class="container-fluid  text-black align-items-center justify-contents-center" >
         <h1 class="text-center">CONTESTANTS</h1>
         <div class="row px-5 py-3">
             <h2 class="text-center">President Contestants</h2>

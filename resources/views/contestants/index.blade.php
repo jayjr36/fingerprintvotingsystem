@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <div class="container-fluid bg-dark text-white align-items-center justify-content-center" style="height: 90vh;">
+    <div class="container-fluid align-items-center justify-content-center" style="height: 90vh;">
         <h1 class="text-center">ELECTORAL CONTESTANTS</h1>
         <div class="row px-5 py-3">
             <h2 class="text-center">President Contestants</h2>

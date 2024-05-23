@@ -34,3 +34,4 @@ Route::get('/contestants', [ContestantController::class, 'index'])->name('contes
 Route::get('/contestants-uploaded', [ContestantController::class, 'indexContestants'])->name('all-contestants');
 Route::get('/create/upload', [ContestantController::class, 'create'])->name('create-contestants');
 Route::post('/save-upload/contestants', [ContestantController::class, 'store'])->name('store-contestants');
+Route::resource('voters', FingerprintController::class);
