@@ -109,9 +109,9 @@
                     let tableBody = $('#votes-table-body');
                     tableBody.empty();
 
-                    let presidentCounts = {'candidate1': 0, 'candidate2': 0, 'candidate3': 0};
-                    let mpCounts = {'candidate1': 0, 'candidate2': 0, 'candidate3': 0};
-                    let councilorCounts = {'candidate1': 0, 'candidate2': 0, 'candidate3': 0};
+                    let presidentCounts = {'c1': 0, 'c2': 0, 'c3': 0};
+                    let mpCounts = {'c1': 0, 'c2': 0, 'c3': 0};
+                    let councilorCounts = {'c1': 0, 'c2': 0, 'c3': 0};
 
                     data.forEach(vote => {
                         tableBody.append(`<tr>
@@ -134,15 +134,15 @@
                         }
                     });
 
-                    $('#president-candidate1').text(presidentCounts['candidate1']);
-                    $('#president-candidate2').text(presidentCounts['candidate2']);
-                    $('#president-candidate3').text(presidentCounts['candidate3']);
-                    $('#mp-candidate1').text(mpCounts['candidate1']);
-                    $('#mp-candidate2').text(mpCounts['candidate2']);
-                    $('#mp-candidate3').text(mpCounts['candidate3']);
-                    $('#councilor-candidate1').text(councilorCounts['candidate1']);
-                    $('#councilor-candidate2').text(councilorCounts['candidate2']);
-                    $('#councilor-candidate3').text(councilorCounts['candidate3']);
+                    $('#president-candidate1').text(presidentCounts['c1']);
+                    $('#president-candidate2').text(presidentCounts['c2']);
+                    $('#president-candidate3').text(presidentCounts['c3']);
+                    $('#mp-candidate1').text(mpCounts['c1']);
+                    $('#mp-candidate2').text(mpCounts['c2']);
+                    $('#mp-candidate3').text(mpCounts['c3']);
+                    $('#councilor-candidate1').text(councilorCounts['c1']);
+                    $('#councilor-candidate2').text(councilorCounts['c2']);
+                    $('#councilor-candidate3').text(councilorCounts['c3']);
                 }
             });
         }
