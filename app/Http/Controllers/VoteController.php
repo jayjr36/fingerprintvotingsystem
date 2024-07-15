@@ -22,14 +22,14 @@ class VoteController extends Controller
                       ->first();
 
         if (!$voter) {
-            return response()->json(['error' => 'Voter ID not found', 'success' => 'false'], 400);
+            return response()->json(['error' => 'Voter ID not found', 'success' => false], 400);
         }
 
         // Check if the voter has already voted
         $existingVote = Vote::where('voter_id', $validatedData['voter_id'])->first();
 
         if ($existingVote) {
-            return response()->json(['error' => 'This voter has already voted', 'success' => 'false'], 400);
+            return response()->json(['error' => 'This voter has already voted', 'success' => false], 400);
         }
 
         $vote = Vote::create([
@@ -39,7 +39,7 @@ class VoteController extends Controller
             'councilor' => $validatedData['councillor'],
         ]);
 
-        return response()->json(['message' => 'Vote recorded successfully', 'success' => 'true'], 201);
+        return response()->json(['message' => 'Vote recorded successfully', 'success' => true], 201);
     }
 
     public function index()
