@@ -4,7 +4,7 @@
     <div class="container-fluid  text-black align-items-center justify-contents-center" >
         <h1 class="text-center">CONTESTANTS</h1>
         <div class="row px-5 py-3">
-            <h2 class="text-center">President Contestants</h2>
+            <h2 class="text-center">President</h2>
             @foreach ($presidentContestants as $contestant)
                 <div class="col-md-3 px-5 text-center">
                     <div class="card mb-3">
@@ -19,7 +19,7 @@
         </div>
 
         <div class="row px-5 py-3">
-            <h2 class="text-center">Member of Parliament Contestants</h2>
+            <h2 class="text-center">Member of Parliament</h2>
             @foreach ($mpContestants as $contestant)
                 <div class="col-md-3 px-5">
                     <div class="row card mb-3">
@@ -34,7 +34,7 @@
         </div>
 
         <div class="row px-5">
-            <h2 class="text-center">Councilor Contestants</h2>
+            <h2 class="text-center">CounciLlors</h2>
             @foreach ($councilorContestants as $contestant)
                 <div class="col-md-3 px-5">
                     <div class="row card mb-3">

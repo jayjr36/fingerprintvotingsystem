@@ -38,11 +38,11 @@
                     <td class="text-center fw-bold fs-4">President</td>
                 </tr>
                 <tr>
-                    <td>PAUL MAKONDA</td>
+                    <td>JOHN MAGUFULI</td>
                     <td id="president-candidate1">0</td>
                 </tr>
                 <tr>
-                    <td>TUNDU LISU</td>
+                    <td>JAKAYA KIKWETE</td>
                     <td id="president-candidate2">0</td>
                 </tr>
                 <tr>
@@ -53,36 +53,36 @@
                     <td class="text-center fw-bold fs-4">Members of parliament</td>
                 </tr>
                 <tr>
-                    <td>JANETH MAGUFULI</td>
+                    <td>KASSIM MAJALIWA</td>
                     <td id="mp-candidate1">0</td>
                 </tr>
                 <tr>
-                    <td>JOSEPH H. SHINDIKA</td>
+                    <td>TULIA ACKSON</td>
                     <td id="mp-candidate2">0</td>
                 </tr>
                 <tr>
-                    <td>MWANA FALSAFA</td>
+                    <td>JOSEPH MUSUKUMA</td>
                     <td id="mp-candidate3">0</td>
                 </tr>
                 <tr>
                     <td class="text-center fw-bold fs-4">Councilors</td>
                 </tr>
                 <tr>
-                    <td>JACK HAMISI</td>
+                    <td>NASSEEB ABDUL</td>
                     <td id="councilor-candidate1">0</td>
                 </tr>
                 <tr>
-                    <td>HAJI S. LIBULULU</td>
+                    <td>JACOB STEVEN</td>
                     <td id="councilor-candidate2">0</td>
                 </tr>
                 <tr>
-                    <td>HALIMA MDEE</td>
+                    <td>WEMA SEPETU</td>
                     <td id="councilor-candidate3">0</td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <div class="col-md-7 py-3">
+    {{-- <div class="col-md-7 py-3">
         <h1>Valid Votes</h1>
         <table class="table col-md-6">
             <thead>
@@ -97,7 +97,7 @@
                 <!-- Votes will be appended here -->
             </tbody>
         </table>
-    </div>
+    </div> --}}
      
     </div>
     <script>
